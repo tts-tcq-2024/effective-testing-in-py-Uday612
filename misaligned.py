@@ -8,7 +8,7 @@ def print_color_map():
             color_map.append(f'{i * 5 + j} | {major} | {minor}')
     return len(major_colors) * len(minor_colors)
 
-def generate_color_map:
+def generate_color_map():
     expected_color_map = []
     major_colors = ["White", "Red", "Black", "Yellow", "Violet"]
     minor_colors = ["Blue", "Orange", "Green", "Brown", "Slate"]
