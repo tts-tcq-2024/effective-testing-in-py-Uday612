@@ -7,7 +7,7 @@ def network_alert_stub(celcius):
     # stub always succeeds and returns 200
     return 200
 
-def print_alert_message():
+def print_alert_message(celcius):
     print(f'ALERT: Temperature is {celcius} celcius')
     
 def farenheit_to_celcius(farenheit):
