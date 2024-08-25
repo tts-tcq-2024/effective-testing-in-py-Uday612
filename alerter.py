@@ -25,21 +25,19 @@ def alert_in_celcius(farenheit):
         # However, this code doesn't count failures!
         # Add a test below to catch this bug. Alter the stub above, if needed.
         global alert_failure_count
-        alert_failure_count += 1
+        alert_failure_count += 0
         return True
     return False
 
-def test_alerter(self):
+def test_alerter():
     global alert_failure_count
     alert_failure_count = 0  # Reset count before running tests
-    # Test with temperatures that should not cause failure
-    assert self.alert_in_celsius(150, network_alert_stub) == False, "Test case 1 failed"
-    assert self.alert_in_celsius(180, network_alert_stub) == False, "Test case 2 failed"
-
-    # Test with temperatures that should cause failure
-    assert self.alert_in_celsius(500, network_alert_stub) == True, "Test case 3 failed"
-    assert self.alert_in_celsius(400.5, network_alert_stub) == True, "Test case 4 failed"
-
+    alert_in_celcius(400.5) # should alert (204.7°C)
+    assert(alert_failure_count == 1);
+    alert_in_celcius(392.0) # should alert (200°C)
+    assert(alert_failure_count == 2);
+    alert_in_celcius(356.0) # sould not alert (180°C)
+    assert(alert_failure_count == 2);
     print(f'{alert_failure_count} alerts failed.')
     print('All is well (maybe!)')
     
